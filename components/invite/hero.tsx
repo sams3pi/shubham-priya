@@ -40,16 +40,17 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={300} className="mt-10">
-          <p className="text-xs tracking-[0.35em] text-gold uppercase">The wedding of</p>
-          <h2 className="mt-4 font-script text-7xl leading-none text-primary">Shubham</h2>
-          <p className="gold-shimmer my-2 font-serif text-4xl italic">&amp;</p>
-          <h2 className="font-script text-7xl leading-none text-primary">Priye</h2>
+          <p className="text-sm tracking-[0.35em] text-gold uppercase">The wedding of</p>
+          <h2 className="mt-4 font-script text-8xl leading-none text-primary">Priya</h2>
+          <p className="gold-shimmer heartbeat my-2 font-serif text-5xl italic">&amp;</p>
+          <h2 className="font-script text-8xl leading-none text-primary">Shubham</h2>
         </Reveal>
 
         <Reveal delay={450} className="mt-10">
           <Ornament />
-          <p className="mt-4 text-xl tracking-[0.15em] text-foreground">Thursday</p>
-          <p className="mt-1 text-2xl font-medium tracking-wide text-foreground">28th January 2027</p>
+          <p className="mt-4 text-2xl tracking-[0.15em] text-foreground">Thursday</p>
+          <p className="mt-1 text-3xl font-medium tracking-wide text-foreground">28th January 2027</p>
+          <p className="mt-2 text-xl tracking-[0.2em] text-gold">8:00 PM</p>
         </Reveal>
       </div>
 

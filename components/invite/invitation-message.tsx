@@ -6,8 +6,8 @@ export function InvitationMessage() {
   return (
     <section id="invitation" className="relative px-6 py-16 text-center">
       <Reveal>
-        <p className="text-xs tracking-[0.35em] text-gold uppercase">With the blessings of the Almighty</p>
-        <p className="mx-auto mt-6 max-w-xs text-lg leading-relaxed text-foreground">
+        <p className="text-sm tracking-[0.35em] text-gold uppercase">With the blessings of the Almighty</p>
+        <p className="mx-auto mt-6 max-w-xs text-xl leading-relaxed text-foreground">
           and our beloved elders, together with our families, we joyfully invite you to celebrate the
           sacred union of
         </p>
@@ -27,9 +27,9 @@ export function InvitationMessage() {
       </Reveal>
 
       <Reveal delay={200} className="mt-10">
-        <h2 className="font-script text-5xl text-primary">Shubham</h2>
-        <p className="my-1 text-sm tracking-[0.3em] text-gold uppercase">weds</p>
-        <h2 className="font-script text-5xl text-primary">Priye</h2>
+        <h2 className="font-script text-6xl text-primary">Priya</h2>
+        <p className="my-1 text-base tracking-[0.3em] text-gold uppercase">weds</p>
+        <h2 className="font-script text-6xl text-primary">Shubham</h2>
       </Reveal>
 
       <Reveal delay={250} className="mt-10">

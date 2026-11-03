@@ -46,10 +46,10 @@ export function EnvelopeIntro({ opened, onOpen }: { opened: boolean; onOpen: () 
         <p className="text-sm tracking-[0.35em] text-muted-foreground uppercase">You are invited</p>
         <p className="mt-2 text-xs tracking-[0.25em] text-gold uppercase">to the wedding of</p>
 
-        <h1 className="mt-6 font-script text-6xl leading-tight text-primary">
+        <h1 className="mt-6 font-script text-7xl leading-tight text-primary">
+          Priya
+          <span className="heartbeat block py-1 font-serif text-4xl text-gold italic">&amp;</span>
           Shubham
-          <span className="block py-1 font-serif text-3xl text-gold italic">&amp;</span>
-          Priye
         </h1>
 
         <p className="mt-6 text-lg tracking-[0.2em] text-foreground">28 · 01 · 2027</p>

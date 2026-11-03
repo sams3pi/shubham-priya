@@ -27,8 +27,8 @@ export function Countdown() {
   return (
     <section className="px-6 py-16 text-center">
       <Reveal>
-        <p className="text-xs tracking-[0.35em] text-gold uppercase">Counting down to forever</p>
-        <h2 className="mt-3 font-script text-5xl text-primary">The Big Day</h2>
+        <p className="text-sm tracking-[0.35em] text-gold uppercase">Counting down to forever</p>
+        <h2 className="mt-3 font-script text-6xl text-primary">The Big Day</h2>
       </Reveal>
 
       <Reveal delay={150} className="mt-8">
@@ -36,9 +36,9 @@ export function Countdown() {
           {(['Days', 'Hours', 'Minutes', 'Seconds'] as const).map((unit) => (
             <div
               key={unit}
-              className="flex flex-col items-center rounded-2xl border border-border bg-card py-4 shadow-sm"
+              className="flex flex-col items-center rounded-2xl border border-border bg-card py-5 shadow-sm"
             >
-              <span className="text-3xl font-medium text-primary tabular-nums">
+              <span className="text-4xl font-medium text-primary tabular-nums">
                 {remaining ? String(remaining[unit]).padStart(2, '0') : '--'}
               </span>
               <span className="mt-1 text-[11px] tracking-[0.15em] text-muted-foreground uppercase">

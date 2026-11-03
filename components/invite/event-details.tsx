@@ -1,13 +1,14 @@
 import { CalendarHeart, Clock, MapPin, Navigation, CalendarPlus } from 'lucide-react'
 import { Reveal } from './reveal'
+import { Toran } from './toran'
 
 const VENUE = 'Ranchi Haveli Banquet Hall, Ring Road, Kanke, Ranchi'
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE)}`
 const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(VENUE)}&output=embed`
 const CALENDAR_URL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-  'Wedding of Shubham & Priye',
+  'Wedding of Priya & Shubham',
 )}&dates=20270128T143000Z/20270128T183000Z&location=${encodeURIComponent(VENUE)}&details=${encodeURIComponent(
-  'Join us to celebrate the wedding of Shubham & Priye.',
+  'Join us to celebrate the wedding of Priya & Shubham.',
 )}`
 
 const DETAILS = [
@@ -18,10 +19,11 @@ const DETAILS = [
 
 export function EventDetails() {
   return (
-    <section className="relative bg-secondary/60 px-6 py-16 text-center">
+    <section className="relative bg-secondary/60 px-6 pt-36 pb-16 text-center">
+      <Toran />
       <Reveal>
-        <p className="text-xs tracking-[0.35em] text-gold uppercase">Save the date</p>
-        <h2 className="mt-3 font-script text-5xl text-primary">Shubh Vivah</h2>
+        <p className="text-sm tracking-[0.35em] text-gold uppercase">Save the date</p>
+        <h2 className="mt-3 font-script text-6xl text-primary">Shubh Vivah</h2>
       </Reveal>
 
       <Reveal delay={150} className="mt-10">
@@ -35,9 +37,9 @@ export function EventDetails() {
                 <Icon className="size-5" aria-hidden="true" />
               </span>
               <div>
-                <p className="text-xs tracking-[0.25em] text-gold uppercase">{label}</p>
-                <p className="text-lg leading-snug font-medium text-foreground">{value}</p>
-                {sub && <p className="text-base text-muted-foreground">{sub}</p>}
+                <p className="text-sm tracking-[0.25em] text-gold uppercase">{label}</p>
+                <p className="text-xl leading-snug font-medium text-foreground">{value}</p>
+                {sub && <p className="text-lg text-muted-foreground">{sub}</p>}
               </div>
             </li>
           ))}

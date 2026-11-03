@@ -10,8 +10,8 @@ export function Closing() {
         <p className="mx-auto mt-8 max-w-xs text-xl leading-relaxed text-foreground">
           Your presence and blessings will make our celebration complete.
         </p>
-        <p className="mt-8 text-xs tracking-[0.35em] text-gold uppercase">With love</p>
-        <p className="mt-3 font-script text-5xl text-primary">Shubham &amp; Priye</p>
+        <p className="mt-8 text-sm tracking-[0.35em] text-gold uppercase">With love</p>
+        <p className="mt-3 font-script text-6xl text-primary">Priya &amp; Shubham</p>
         <p className="mt-6 text-base text-muted-foreground italic">and families</p>
       </Reveal>
 

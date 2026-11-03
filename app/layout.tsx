@@ -23,12 +23,12 @@ const devanagari = Tiro_Devanagari_Hindi({
 })
 
 export const metadata: Metadata = {
-  title: 'Shubham & Priye — Wedding Invitation',
+  title: 'Priya & Shubham — Wedding Invitation',
   description:
-    'You are cordially invited to the wedding of Shubham & Priye on 28th January 2027 at Ranchi Haveli Banquet Hall, Ring Road, Kanke, Ranchi.',
+    'You are cordially invited to the wedding of Priya & Shubham on 28th January 2027 at Ranchi Haveli Banquet Hall, Ring Road, Kanke, Ranchi.',
   generator: 'v0.app',
   openGraph: {
-    title: 'Shubham & Priye — Wedding Invitation',
+    title: 'Priya & Shubham — Wedding Invitation',
     description: '28th January 2027 · 8 PM · Ranchi Haveli Banquet Hall, Ranchi',
     images: ['/images/couple.png'],
   },

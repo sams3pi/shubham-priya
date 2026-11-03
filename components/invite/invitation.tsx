@@ -10,6 +10,8 @@ import { InvitationMessage } from './invitation-message'
 import { Countdown } from './countdown'
 import { EventDetails } from './event-details'
 import { Closing } from './closing'
+import { MandalaDivider } from './mandala-divider'
+import { SevenVows } from './seven-vows'
 
 export function Invitation() {
   const [opened, setOpened] = useState(false)
@@ -52,7 +54,10 @@ export function Invitation() {
       >
         <Hero />
         <InvitationMessage />
+        <MandalaDivider caption="Two hearts, one sacred flame" />
+        <SevenVows />
         <EventDetails />
+        <MandalaDivider />
         <Countdown />
         <Closing />
       </main>
