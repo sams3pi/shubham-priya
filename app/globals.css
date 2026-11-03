@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-script: var(--font-great-vibes), cursive;
+  --font-devanagari: var(--font-devanagari), serif;
+  --font-sans: var(--font-cormorant), Georgia, serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-gold: var(--gold);
+  --color-blush: var(--blush);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: #fbf9f5;
+  --foreground: #5a2a3a;
+  --card: #ffffff;
+  --card-foreground: #5a2a3a;
+  --popover: #ffffff;
+  --popover-foreground: #5a2a3a;
+  --primary: #c2557a;
+  --primary-foreground: #ffffff;
+  --secondary: #fbe7ee;
+  --secondary-foreground: #7a3550;
+  --muted: #f8eef1;
+  --muted-foreground: #8d6271;
+  --accent: #f6d5e0;
+  --accent-foreground: #5a2a3a;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #f0d6df;
+  --input: #f0d6df;
+  --ring: #e3a3b9;
+  --gold: #b8935a;
+  --blush: #f4c6d4;
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(var(--spin, 360deg));
+    opacity: 0;
+  }
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.petal {
+  animation: petal-fall var(--duration, 12s) linear var(--delay, 0s) infinite;
+}
+
+.soft-float {
+  animation: soft-float 5s ease-in-out infinite;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #b8935a 0%, #e8cf9a 25%, #b8935a 50%, #e8cf9a 75%, #b8935a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal,
+  .soft-float,
+  .gold-shimmer {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 50%, transparent 92%);
+}
+
+.fade-radial {
+  -webkit-mask-image: radial-gradient(circle, #000 45%, transparent 70%);
+  mask-image: radial-gradient(circle, #000 45%, transparent 70%);
+}
