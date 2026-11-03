@@ -1,6 +1,9 @@
 import { CalendarHeart, Clock, MapPin, Navigation, CalendarPlus } from 'lucide-react'
 import { Reveal } from './reveal'
 import { Toran } from './toran'
+import { ScratchCard } from './scratch-card'
+import { Countdown } from './countdown'
+import { Ornament } from './ornament'
 
 const VENUE = 'Ranchi Haveli Banquet Hall, Ring Road, Kanke, Ranchi'
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE)}`
@@ -12,7 +15,6 @@ const CALENDAR_URL = `https://calendar.google.com/calendar/render?action=TEMPLAT
 )}`
 
 const DETAILS = [
-  { icon: CalendarHeart, label: 'Date', value: 'Thursday, 28th January 2027' },
   { icon: Clock, label: 'Time', value: '8:00 PM onwards' },
   { icon: MapPin, label: 'Venue', value: 'Ranchi Haveli Banquet Hall', sub: 'Ring Road, Kanke, Ranchi' },
 ]
@@ -24,6 +26,26 @@ export function EventDetails() {
       <Reveal>
         <p className="text-sm tracking-[0.35em] text-gold uppercase">Save the date</p>
         <h2 className="mt-3 font-script text-6xl text-primary">Shubh Vivah</h2>
+      </Reveal>
+
+      <Reveal delay={150} className="mt-10">
+        <ScratchCard>
+          <div className="flex flex-col items-center px-6 py-8">
+            <p className="text-lg tracking-[0.3em] text-muted-foreground uppercase">Thursday</p>
+            <div className="mt-2 flex items-center gap-4">
+              <span className="text-xl tracking-widest text-gold uppercase">Jan</span>
+              <span className="border-x border-blush px-4 font-serif text-7xl leading-none font-semibold text-primary">
+                28
+              </span>
+              <span className="text-xl tracking-widest text-gold">2027</span>
+            </div>
+            <p className="mt-3 text-lg tracking-[0.2em] text-foreground">8:00 PM</p>
+          </div>
+        </ScratchCard>
+      </Reveal>
+
+      <Reveal delay={200} className="mt-8">
+        <Countdown />
       </Reveal>
 
       <Reveal delay={150} className="mt-10">
@@ -46,7 +68,19 @@ export function EventDetails() {
         </ul>
       </Reveal>
 
-      <Reveal delay={250} className="mt-8">
+      <Reveal delay={150} className="mt-12">
+        <Ornament />
+        <p className="mt-4 text-sm tracking-[0.3em] text-muted-foreground uppercase">
+          {"Didn't scratch? Here it is"}
+        </p>
+        <p className="mt-2 flex items-center justify-center gap-2 text-2xl font-medium text-foreground">
+          <CalendarHeart className="size-5 text-primary" aria-hidden="true" />
+          Thursday, 28th January 2027
+        </p>
+        <p className="mt-1 text-lg tracking-[0.2em] text-gold">8:00 PM onwards</p>
+      </Reveal>
+
+      <Reveal delay={200} className="mt-8">
         <div className="overflow-hidden rounded-2xl border-4 border-white shadow-md ring-1 ring-blush">
           <iframe
             src={MAP_EMBED}

@@ -48,9 +48,10 @@ export function Hero() {
 
         <Reveal delay={450} className="mt-10">
           <Ornament />
-          <p className="mt-4 text-2xl tracking-[0.15em] text-foreground">Thursday</p>
-          <p className="mt-1 text-3xl font-medium tracking-wide text-foreground">28th January 2027</p>
-          <p className="mt-2 text-xl tracking-[0.2em] text-gold">8:00 PM</p>
+          <p className="mx-auto mt-4 max-w-xs text-2xl leading-snug text-foreground italic">
+            request the pleasure of your company
+          </p>
+          <p className="mt-3 text-sm tracking-[0.3em] text-gold uppercase">Ranchi · Winter 2027</p>
         </Reveal>
       </div>
 
