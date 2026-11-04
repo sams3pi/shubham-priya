@@ -15,7 +15,7 @@ import { Reveal } from './reveal'
 
 export function Invitation() {
   const [opened, setOpened] = useState(false)
-  const [playing, setPlaying] = useState(false)
+  const [playing, setPlaying] = useState(true)
   const musicRef = useRef<HTMLAudioElement | null>(null)
 
   // Initialize the audio object
