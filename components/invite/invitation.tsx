@@ -40,6 +40,25 @@ export function Invitation() {
     }
   }
 
+  const pauseMusic = () => {
+    const music = musicRef.current
+    if (music && !music.paused) {
+      music.pause()
+    }
+    setPlaying(false)
+  }
+
+  const resumeMusic = async () => {
+    if (!opened) return
+    try {
+      const music = getMusic()
+      await music.play()
+      setPlaying(true)
+    } catch {
+      setPlaying(false)
+    }
+  }
+
   const toggleMusic = () => {
     const music = getMusic()
     if (playing) {
@@ -50,6 +69,28 @@ export function Invitation() {
       setPlaying(true)
     }
   }
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        pauseMusic()
+      } else if (opened) {
+        void resumeMusic()
+      }
+    }
+
+    const handlePageHide = () => {
+      pauseMusic()
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('pagehide', handlePageHide)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('pagehide', handlePageHide)
+    }
+  }, [opened])
 
   // Cleanup music when component unmounts
   useEffect(() => {
