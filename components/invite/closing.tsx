@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import { Reveal } from './reveal'
 import { Ornament } from './ornament'
+import { CouplePhotoBackdrop } from './couple-photo-backdrop'
 
 export function Closing() {
   return (
     <section className="relative overflow-hidden px-6 pt-16 pb-48 text-center">
+      <CouplePhotoBackdrop className="opacity-60" />
       <Reveal>
         <Ornament />
         <p className="mx-auto mt-8 max-w-xs text-xl leading-relaxed text-foreground">

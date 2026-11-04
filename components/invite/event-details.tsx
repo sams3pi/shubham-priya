@@ -1,9 +1,9 @@
 import { CalendarHeart, Clock, MapPin, Navigation, CalendarPlus } from 'lucide-react'
 import { Reveal } from './reveal'
 import { Toran } from './toran'
-import { ScratchCard } from './scratch-card'
 import { Countdown } from './countdown'
 import { Ornament } from './ornament'
+import { CouplePhotoBackdrop } from './couple-photo-backdrop'
 
 const VENUE = 'Ranchi Haveli Banquet Hall, Ring Road, Kanke, Ranchi'
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE)}`
@@ -22,30 +22,17 @@ const DETAILS = [
 export function EventDetails() {
   return (
     <section className="relative bg-secondary/60 px-6 pt-36 pb-16 text-center">
+      <CouplePhotoBackdrop className="opacity-50" />
       <Toran />
       <Reveal>
         <p className="text-sm tracking-[0.35em] text-gold uppercase">Save the date</p>
         <h2 className="mt-3 font-script text-6xl text-primary">Shubh Vivah</h2>
       </Reveal>
 
-      <Reveal delay={150} className="mt-10">
-        <ScratchCard>
-          <div className="flex flex-col items-center px-6 py-8">
-            <p className="text-lg tracking-[0.3em] text-muted-foreground uppercase">Thursday</p>
-            <div className="mt-2 flex items-center gap-4">
-              <span className="text-xl tracking-widest text-gold uppercase">Jan</span>
-              <span className="border-x border-blush px-4 font-serif text-7xl leading-none font-semibold text-primary">
-                28
-              </span>
-              <span className="text-xl tracking-widest text-gold">2027</span>
-            </div>
-            <p className="mt-3 text-lg tracking-[0.2em] text-foreground">8:00 PM</p>
-          </div>
-        </ScratchCard>
-      </Reveal>
-
-      <Reveal delay={200} className="mt-8">
-        <Countdown />
+      <Reveal delay={150} className="mt-8">
+        <div className="rounded-[2rem] border border-border/80 bg-card/80 p-5 shadow-[0_18px_45px_rgba(194,85,122,0.08)] backdrop-blur-sm">
+          <Countdown />
+        </div>
       </Reveal>
 
       <Reveal delay={150} className="mt-10">
