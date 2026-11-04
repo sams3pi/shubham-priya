@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { IndianMusic } from '@/lib/indian-music'
+import { useRef, useState, useEffect } from 'react'
 import { EnvelopeIntro } from './envelope-intro'
 import { FallingPetals } from './falling-petals'
 import { MusicToggle } from './music-toggle'
@@ -16,33 +15,50 @@ import { SevenVows } from './seven-vows'
 export function Invitation() {
   const [opened, setOpened] = useState(false)
   const [playing, setPlaying] = useState(false)
-  const musicRef = useRef<IndianMusic | null>(null)
+  const musicRef = useRef<HTMLAudioElement | null>(null)
 
+  // Initialize the audio object
   const getMusic = () => {
-    if (!musicRef.current) musicRef.current = new IndianMusic()
+    if (!musicRef.current) {
+      // Points to the file in your public folder (public/song.mp3)
+      musicRef.current = new Audio('/song.mp3')
+      musicRef.current.loop = true // Loops the song automatically
+    }
     return musicRef.current
   }
 
   const handleOpen = async () => {
     setOpened(true)
     try {
-      await getMusic().start()
+      const music = getMusic()
+      await music.play()
       setPlaying(true)
     } catch {
+      // Browsers sometimes block autoplay; handle gracefully
       setPlaying(false)
     }
   }
 
-  const toggleMusic = async () => {
+  const toggleMusic = () => {
     const music = getMusic()
     if (playing) {
+      music.pause()
       setPlaying(false)
-      await music.stop()
     } else {
+      music.play()
       setPlaying(true)
-      await music.start()
     }
   }
+
+  // Cleanup music when component unmounts
+  useEffect(() => {
+    return () => {
+      if (musicRef.current) {
+        musicRef.current.pause()
+        musicRef.current.currentTime = 0
+      }
+    }
+  }, [])
 
   return (
     <>
