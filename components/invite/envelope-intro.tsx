@@ -58,6 +58,15 @@ export function EnvelopeIntro({ opened, onOpen }: { opened: boolean; onOpen: () 
     }
   }, [opened])
 
+  useEffect(() => {
+    if (opened) return
+    const id = window.setTimeout(() => {
+      onOpen()
+    }, 10000)
+
+    return () => window.clearTimeout(id)
+  }, [opened, onOpen])
+
   if (gone) return null
 
   const doorBase =

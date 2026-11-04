@@ -51,7 +51,7 @@ export function Hero() {
           <p className="mx-auto mt-4 max-w-xs text-2xl leading-snug text-foreground italic">
             request the pleasure of your company
           </p>
-          <p className="mt-3 text-sm tracking-[0.3em] text-gold uppercase">Ranchi · Winter 2027</p>
+          <p className="mt-3 text-sm tracking-[0.3em] text-gold uppercase">Ranchi </p>
         </Reveal>
       </div>
 
