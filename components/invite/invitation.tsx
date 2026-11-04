@@ -7,7 +7,6 @@ import { FallingPetals } from './falling-petals'
 import { MusicToggle } from './music-toggle'
 import { Hero } from './hero'
 import { InvitationMessage } from './invitation-message'
-import { Countdown } from './countdown'
 import { EventDetails } from './event-details'
 import { Closing } from './closing'
 import { MandalaDivider } from './mandala-divider'
@@ -47,7 +46,7 @@ export function Invitation() {
   return (
     <>
       <EnvelopeIntro opened={opened} onOpen={handleOpen} />
-      <FallingPetals />
+      <FallingPetals active={opened} />
       <main
         className="relative mx-auto min-h-dvh w-full max-w-md overflow-x-hidden bg-background shadow-[0_0_60px_rgba(194,85,122,0.08)]"
         aria-hidden={!opened}
@@ -58,7 +57,6 @@ export function Invitation() {
         <SevenVows />
         <EventDetails />
         <MandalaDivider />
-        <Countdown />
         <Closing />
       </main>
       {opened && <MusicToggle playing={playing} onToggle={toggleMusic} />}
